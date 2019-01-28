@@ -7,17 +7,17 @@ from twilio.rest import TwilioRestClient #imports twilio api
 
 #function to send wol magic packet
 def powerON():
- wol.send_magic_packet('D4.3D.7E.F6.04.14')
+ wol.send_magic_packet('mac address goes here')
 
 #function to send text update via twilio
 def phoneUpdate(message):
 
  #account information for Twilio API
- accountSID = 'AC0251a9ab7169cc0cc1a0e07030295fcd'
- authToken = 'c857634ea93a5ad0bf098f43ffdf3c93'
+ accountSID = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+ authToken = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
- myCellPhone = '15412211759'
- myTwilioNumber = '15412554405' 
+ myCellPhone = 'XXXXXXXXXXX'
+ myTwilioNumber = 'XXXXXXXXXXX' 
 
  twilioCli = TwilioRestClient(accountSID, authToken)
  twilioCli.messages.create(body=message, from_=myTwilioNumber, to=myCellPhone)
